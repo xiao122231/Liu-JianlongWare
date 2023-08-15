@@ -1,3 +1,5 @@
+local NotificationUITable = {}
+
 local NotificationSystem = Instance.new("ScreenGui")
 local list = Instance.new("Frame")
 local UIListLayout = Instance.new("UIListLayout")
@@ -431,7 +433,7 @@ bar_4.ZIndex = 3
 
 local Canvas = NotificationSystem.list
 
-function Notification(Mode,Text,Duration)
+function NotificationUITable:Notification(Mode,Text,Duration)
     if NotificationTable:FindFirstChild(Mode) then
         pcall(function()
             local Notification = NotificationTable:WaitForChild(Mode):Clone()
@@ -457,4 +459,4 @@ function Notification(Mode,Text,Duration)
     end
 end
 
-return Notification
+return NotificationUITable
